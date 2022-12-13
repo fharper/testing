@@ -16,6 +16,8 @@ body:
         - Missing Information
         - Wrong Information
         - Unclear Documentation
+    validations:
+      required: true
   - type: input
     id: page
     attributes:
