@@ -1,5 +1,5 @@
 name: Documentations
-description: Any suggestions related to the documentation, whether it's an issue, missing informations, unclear steps or new page that should be created
+description: Any suggestions related to the documentation, whether it's an issue, missing information, unclear steps or new page that should be created
 title: "[Docs]: "
 labels: ["docs"]
 body:
@@ -16,7 +16,7 @@ body:
         - Missing Information
         - Wrong Information
         - Unclear Documentation
-  - type: textarea
+  - type: input
     id: page
     attributes:
       label: What page is concerned?
