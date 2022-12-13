@@ -22,8 +22,6 @@ body:
       label: What page is concerned?
       description: If needed, URL to the page with missing or unclear information
       placeholder: https://docs.kubefirst.io/
-    validations:
-      required: true
   - type: textarea
     id: issue
     attributes:
