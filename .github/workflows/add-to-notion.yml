@@ -3,6 +3,7 @@ on:
   issues:
     types:
       - assigned
+  workflow_dispatch:
 
 jobs:
   add_to_notion:
