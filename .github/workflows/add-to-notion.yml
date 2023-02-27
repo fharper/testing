@@ -16,7 +16,7 @@ jobs:
       
     - name: Webhook
       uses: distributhor/workflow-webhook@v3
-      with:
+      env:
         #webhook_url: ${{ secrets.NOTION_WEBHOOK_URL }}
         webhook_url: "https://hooks.zapier.com/hooks/catch/13285796/3oeps9o/"
         data: '{ "issue": "${github.event.assigned.issue.url}}", "title": "${{github.event.assigned.issue.title }}", "content": "${{github.event.assigned.issue.body}}" }'
