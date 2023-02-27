@@ -1,0 +1,18 @@
+name: Move assigned tasks to Fred in Notion
+on:
+  issues:
+    types:
+      - assigned
+
+jobs:
+  add_to_notion:
+    if: ${{ github.event.assigned.assignee == 'fharper' }}
+
+    runs-on: ubuntu-latest
+    steps:
+    - name: Webhook
+      uses: distributhor/workflow-webhook
+      with:
+        #url: ${{ secrets.NOTION_WEBHOOK_URL }}
+        url: "https://hooks.zapier.com/hooks/catch/13285796/3oeps9o/"
+        json: '{ "issue": "${github.event.assigned.issue.url}}", "title": "${{github.event.assigned.issue.title }}", "content": "${{github.event.assigned.issue.body}}" }'
