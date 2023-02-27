@@ -6,10 +6,13 @@ on:
 
 jobs:
   add_to_notion:
-    if: ${{ github.event.assigned.assignee == 'fharper' }}
+    #if: ${{ github.event.assigned.assignee == 'fharper' }}
 
     runs-on: ubuntu-latest
     steps:
+    - name: Debug
+      uses: hmarr/debug-action@v2
+      
     - name: Webhook
       uses: distributhor/workflow-webhook@v3
       with:
