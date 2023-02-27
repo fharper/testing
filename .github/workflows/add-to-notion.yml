@@ -7,7 +7,7 @@ on:
 
 jobs:
   add_to_notion:
-    #if: ${{ github.event.assigned.assignee == 'fharper' }}
+    #if: ${{ github.event.assignee.login == 'fharper' }}
 
     runs-on: ubuntu-latest
     steps:
@@ -19,4 +19,4 @@ jobs:
       env:
         #webhook_url: ${{ secrets.NOTION_WEBHOOK_URL }}
         webhook_url: "https://hooks.zapier.com/hooks/catch/13285796/3oeps9o/"
-        data: '{ "issue": "${github.event.assigned.issue.url}}", "title": "${{github.event.assigned.issue.title }}", "content": "${{github.event.assigned.issue.body}}" }'
+        data: '{ "issue": "${{ github.event.issue.html_url }}", "title": "${{ github.event.issue.title }}", "content": "${{ github.event.issue.body }}" }'
