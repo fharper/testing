@@ -1,3 +1,6 @@
 {
-    "subject-max-length": 72
+    "parserPreset": "conventional-changelog-conventionalcommits",
+	"rules": {
+        "subject-max-length": [2, "always", 72]
+    }
 }
