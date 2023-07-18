@@ -1,5 +1,5 @@
 ---
-name: Markdown Syntax Validation
+name: Test Branch Protection
 on: [push, workflow_dispatch]
 
 jobs:
