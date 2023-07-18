@@ -15,6 +15,10 @@ jobs:
           access_token: ${{ secrets.PERMISSIONS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
 
+      - name: Sleep for 2 minutes so I can check stuff
+        run: sleep 120s
+        shell: bash
+
       - name: Enable back docs branch protection
         uses: fharper/branch-protection-bot@master
         if: always()  # Force to always run this step to ensure the protection is always turned back on no matetr if previous step fail
