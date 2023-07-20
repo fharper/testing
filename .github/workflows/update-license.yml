@@ -18,6 +18,8 @@ jobs:
       - uses: FantasticFiasco/action-update-license-year@v3.0.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          commitAuthorName: 'Fred'
+          commitAuthorEmail: 'fred@kubeshop.io'
           gpgPrivateKey: ${{ secrets.GPG_KEY }}
           gpgPassphrase: ${{ secrets.GPG_PASSPHRASE }}
           branchName: license/{{currentYear}}
