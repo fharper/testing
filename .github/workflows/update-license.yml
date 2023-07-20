@@ -20,3 +20,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           gpgPrivateKey: ${{ secrets.GPG_KEY }}
           gpgPassphrase: ${{ secrets.GPG_PASSPHRASE }}
+          branchName: license/{{currentYear}}
+          commitTitle: "chore: update license years for {{currentYear}}"
+          prTitle: "chore: update license years for {{currentYear}}"
