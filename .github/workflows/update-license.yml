@@ -3,7 +3,7 @@ name: Update copyright years
 
 on:
   schedule:
-    - cron: '0 3 1 1 *'  # 03:00 AM on January 1
+    - cron: '0 5 1 1 *'  # Midnigth of December 31st (GitHub Action are using UTC)
   workflow_dispatch:
 
 jobs:
