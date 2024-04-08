@@ -1,0 +1,13 @@
+---
+name: Sleep Quick
+on: push
+
+jobs:
+  sleep-quick:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Sleep for 10s
+        uses: juliangruber/sleep-action@v2.0.0
+        with:
+          time: 10s
