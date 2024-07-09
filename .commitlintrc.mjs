@@ -1,16 +1,18 @@
 export default {
-  extends: ['@commitlint/rules'],
+  extends: ['@commitlint/config-conventional'],
+  plugins: ['commitlint-plugin-function-rules'],
   rules: {
-    'header-max-length': [2, 'always', 72],
-  },
-  plugins: [
-    {
-      rules: {
-        'header-max-length': (parsed, _when, _value) => {
-          parsed.header = parsed.header.replace(/\s\(#[0-9]+\)$/, '')
-          return rules.default['header-max-length'](parsed, _when, _value)
-        },
+    'header-max-length': [0], // level: disabled
+    'function-rules/header-max-length': [
+      2, // level: error
+      'always',
+      (parsed) => {
+        parsed.header = parsed.header.replace(/\s\(#[0-9]+\)$/, '')
+        if (parsed.scope === 'deps' && parsed.header.length <= 72) {
+          return [true];
+        }
+        return [false, 'header must not be longer than 72 characters excluding appended issues'];
       },
-    },
-  ]
-}
+    ],
+  },
+};
