@@ -7,10 +7,13 @@ export default {
       'always',
       (parsed) => {
         parsed.header = parsed.header.replace(/\s\(#[0-9]+\)$/, '')
-        if (parsed.scope === 'deps' && parsed.header.length <= 72) {
+
+        if (parsed.header.length <= 72) {
           return [true];
         }
-        return [false, 'header must not be longer than 72 characters excluding appended issues'];
+        else {
+          return [false, 'header must not be longer than 72 characters excluding appended issues'];
+        }
       },
     ],
   },
