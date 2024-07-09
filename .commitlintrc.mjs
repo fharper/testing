@@ -1,5 +1,4 @@
-const Configuration = {
-
+export default {
   extends: ['@commitlint/rules'],
   rules: {
     'header-max-length': [2, 'always', 72],
@@ -14,6 +13,4 @@ const Configuration = {
       },
     },
   ]
-};
-
-export default Configuration;
+}
