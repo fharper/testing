@@ -6,13 +6,13 @@ export default {
       2, // level: error
       'always',
       (parsed) => {
-        let header = parsed.header.replace(/\((close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #[0-9]+\)$/, '')
+        parsed.header = parsed.header.replace(/\((close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #[0-9]+\)$/, '')
 
-        if (header.length <= 72) {
+        if (parsed.header.length <= 72) {
           return [true];
         }
         else {
-          return [false, 'header must not be longer than 72 characters excluding appended issues' + header];
+          return [false, 'header must not be longer than 72 characters excluding appended issues'];
         }
       },
     ],
