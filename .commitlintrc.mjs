@@ -12,7 +12,7 @@ export default {
           return [true];
         }
         else {
-          return [false, 'header must not be longer than 72 characters excluding appended issues'];
+          return [false, 'header must not be longer than 72 characters excluding appended issues' + parsed.header];
         }
       },
     ],
